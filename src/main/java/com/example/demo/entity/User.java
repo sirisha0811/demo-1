@@ -4,13 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@NotBlank
 	private String name;
+	private Integer age;
 
 	public Integer getId() {
 		return id;
@@ -24,5 +27,19 @@ public class User {
 	public String getName() {
 		return name;
 	}
+	
+
+	public void setname(String name) {
+		this.name = name;
+	}
+	
+	public Integer age() {
+		return age;
+	}
+	public void setage(Integer age) {
+		this.age = age;
+	}
+
+	
 }
 
