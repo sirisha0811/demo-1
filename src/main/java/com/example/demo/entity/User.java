@@ -1,5 +1,4 @@
 package com.example.demo.entity;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,21 +17,18 @@ public class User {
 	public Integer getId() {
 		return id;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
+  public void setId(Integer id) {
+	  this.id = id;
+  }
 	public String getName() {
 		return name;
 	}
-	
+
 
 	public void setname(String name) {
 		this.name = name;
 	}
-	
+
 	public Integer age() {
 		return age;
 	}
@@ -40,6 +36,5 @@ public class User {
 		this.age = age;
 	}
 
-	
-}
 
+}

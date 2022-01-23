@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,12 +34,13 @@ public class UserController {
 		  }
 		  @PostMapping("/user")
 		  @ResponseStatus(code = HttpStatus.CREATED)
-		 void  createUser(@RequestBody User user)	 {
+		 void  createUser(@RequestBody @Valid User user)	 {
 			  System.out.println(user.getName());
 			  userService.saveUser(user);
 		  }
-		  @DeleteMapping("/user")
-		  void deleteUser() {
+		  @DeleteMapping("/user/{id}")
+		  void deleteUser(@PathVariable("id") Integer id) {
+			  userService.deleteUser(id);
 			  
 		  }
 		  
